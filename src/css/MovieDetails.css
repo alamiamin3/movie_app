@@ -1,0 +1,93 @@
+:root{
+
+    --fontMaincolor: rgb(242, 237, 237);
+    --fontSecondcolor: rgb(230, 35, 21);
+}
+
+.movie-details-container{
+    position: absolute;
+    text-align:start;
+    top: 15%;
+    left: 10%;
+    width: 800px;
+    font-size: 1.5rem;
+    /* background-color: rgba(0, 0, 0, 0.5); */
+    border-radius: 7px;
+    color: var(--fontMaincolor);
+    padding: 50px;
+    -webkit-animation: scale-up-center 0.7s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+    animation: scale-up-center 0.7s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+}
+.movie-details-container h1{
+    font-weight: 600;
+    font-size: 5rem;
+}
+.movie-details-container .stars{
+    color: yellow;
+    margin: 10px 0;
+    font-size: 2rem;
+}
+.movie-details-container p{
+    margin: 10px 0;
+}
+
+@-webkit-keyframes scale-up-center {
+    0% {
+      -webkit-transform: scale(0.5);
+              transform: scale(0.5);
+    }
+    100% {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+    }
+  }
+  @keyframes scale-up-center {
+    0% {
+      -webkit-transform: scale(0.5);
+              transform: scale(0.5);
+    }
+    100% {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+    }
+  }
+
+  .movie-details-container .fav-trailer{
+    margin-top: 50px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    font-size: 3.5rem;
+    gap: 50px;
+  }
+  .movie-details-container .fav-trailer .addToFavorite{
+    /* color: #333; */
+    background-color: rgb(13, 25, 36);
+    padding: 5px;
+    border-radius: 7px;
+    transition: all 0.3s;
+    cursor: pointer;
+}
+.movie-details-container .fav-trailer .addToFavorite:hover{
+    background-color: #fff;
+    color: rgb(13, 25, 36);
+}
+.movie-details-container .fav-trailer .watchTrailer{
+    color: #fff;
+    background-color: rgb(222, 200, 4);
+    padding: 5px;
+    border-radius: 7px;
+    transition: all 0.3s;
+    cursor: pointer;
+  }
+  .movie-details-container .fav-trailer .watchTrailer:hover{
+    color: rgb(222, 200, 4);
+    background-color: #fff;
+  }
+
+  @media screen and (max-width: 865px){
+
+    .movie-details-container .types ,.movie-details-container .overview {
+        display: none;
+    }
+  }
