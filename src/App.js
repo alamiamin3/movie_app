@@ -8,14 +8,22 @@ import apiConfig from './api/apiConfig';
 import 'swiper/css';
 function App() {
   const [movieList, setMovieList] = useState([])
-  // const [currentMovie, setMovie] = useState("")
+  const [MovieContextData, setMovieContextData] = useState({})
   const [loading, setLoading] = useState("true")
   const getMovie = async () =>{
       await fetch(`${apiConfig.baseUrl}discover/movie?api_key=${apiConfig.apiKey}`)
       .then(response => response.json())
       .then(response => {
         setLoading(false)
-        setMovieList(response.results)})
+        setMovieList(response.results)
+        setMovieContextData({
+          title: response.results[0].title,
+          posterPath: apiConfig.originalImage(response.results[0].poster_path),
+          posterPath500: apiConfig.smallImage(response.results[0].poster_path),
+          overvView: response.results[0].overview,
+          rating: response.results[0].vote_average,
+          moviesArr: response.results
+        })})
       .catch(err => console.error(err));
   }
     
@@ -26,14 +34,9 @@ function App() {
     return(
       <h1>Loading...</h1>
     )
+  
   return (
-    <MovieContext.Provider value={{
-      title: movieList[0].title,
-      posterPath: apiConfig.originalImage(movieList[0].poster_path),
-      posterPath500: apiConfig.smallImage(movieList[0].poster_path),
-      overvView: movieList[0].overview,
-      rating: movieList[0].vote_average
-    }}>
+    <MovieContext.Provider value={{...MovieContextData, setMovieContextData}}>
       
       <HomeSection/>
      </MovieContext.Provider>

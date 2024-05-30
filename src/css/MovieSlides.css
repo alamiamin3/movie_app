@@ -1,0 +1,26 @@
+.movie-slide-container{
+    
+    /* margin-top: 70.8vh; */
+}
+.movie-card{
+    height: 300px;
+    width: 200px;
+    text-align: center;
+    transition: all 0.3s;
+    cursor: pointer;
+}
+.movie-card:hover{
+    transform: scale(1.1);
+}
+.movie-card > img{
+    border: 1px solid #fff;
+    border-radius: 7px;
+    height: 80%;
+    width: 100%;
+}
+.mySwiper{
+    background-color: rgba(28, 29, 29, 0.5);
+    position: absolute;
+    top: 70.8vh;
+
+}

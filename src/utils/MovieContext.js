@@ -6,4 +6,6 @@ export const MovieContext = createContext({
     posterPath500: "",
     overvView: "",
     rating: "",
+    moviesArr: [],
+    setMovieContextData: () =>{}
 })

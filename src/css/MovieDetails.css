@@ -3,29 +3,26 @@
     --fontMaincolor: rgb(242, 237, 237);
     --fontSecondcolor: rgb(230, 35, 21);
 }
-
-.movie-details-container{
+ .movie-details-container{
     position: absolute;
     text-align:start;
     top: 15%;
     left: 10%;
-    width: 800px;
-    font-size: 1.5rem;
+    width: 40%;
     /* background-color: rgba(0, 0, 0, 0.5); */
     border-radius: 7px;
     color: var(--fontMaincolor);
     padding: 50px;
+    font-size: 1vw;
     -webkit-animation: scale-up-center 0.7s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
     animation: scale-up-center 0.7s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
 }
 .movie-details-container h1{
     font-weight: 600;
-    font-size: 5rem;
 }
 .movie-details-container .stars{
     color: yellow;
     margin: 10px 0;
-    font-size: 2rem;
 }
 .movie-details-container p{
     margin: 10px 0;
@@ -57,7 +54,7 @@
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
-    font-size: 3.5rem;
+    font-size: 50px;
     gap: 50px;
   }
   .movie-details-container .fav-trailer .addToFavorite{
@@ -86,8 +83,18 @@
   }
 
   @media screen and (max-width: 865px){
-
+    .movie-details-container{
+      width: 80%;
+      font-size: 1em;
+    }
     .movie-details-container .types ,.movie-details-container .overview {
         display: none;
     }
+  }
+  
+  @media screen and (max-height: 865px){
+    .movie-details-container .types ,.movie-details-container .overview {
+        font-size: 15px;
+    }
+    
   }

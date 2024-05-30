@@ -21,7 +21,7 @@ function Navbar(){
                     <li className="Trend">Trend</li>
                 </ul>
                 <div className="search-icon-container" >
-                    <input id="search-input-nav" className={searchState ? "search-input-nav active" : "search-input-nav"} type="text" placeholder="Movie, Tv show..."/>
+                    <input id="search-input-nav" className={searchState ? "search-input-nav " : "search-input-nav active"} type="text" placeholder="Movie, Tv show..."/>
                     <BiSearch className="search-icon" onClick={() =>{setSearchState(!searchState)}}/>
                 </div>
                 <div className="sm-device" onClick={() => {setBarState(!barState)}}>
