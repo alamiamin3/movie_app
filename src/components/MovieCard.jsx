@@ -22,14 +22,14 @@ function MovieCard(prop){
         <div className="movie-card" onClick={()=>{
             movieContextData.setMovieContextData((currentState) => ({...currentState, 
             title:  currentMovie.title,
-            posterPat:  apiConfig.originalImage(currentMovie.poster_path),
+            posterPath:  apiConfig.originalImage(currentMovie.poster_path),
             posterPath50:  apiConfig.smallImage(currentMovie.poster_path),
-            overvVie:  currentMovie.overview,
+            overvView:  currentMovie.overview,
             rating: currentMovie.vote_average
             }))
         }}>
             <img src={`${apiConfig.smallImage(prop.movie.poster_path)}`}/>
-            <p>{prop.movie.title}</p>
+            <button className="movieCard-button">View More details</button>
         </div>
     )
 }

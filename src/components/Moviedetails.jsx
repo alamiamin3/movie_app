@@ -10,6 +10,8 @@ import { MovieContext } from "../utils/MovieContext";
 function Moviedetails(){
     const movieContextData = useContext(MovieContext)
     const [starArr, setStarArr] = useState([])
+    const [movieOverview, setMovieOverview] = useState("")
+    const [movieTitle, setMovieTitle] = useState("")
     const getStarsbasedOnVote = () => {
         let stars = (movieContextData.rating / 2).toPrecision(3);
         let starsArr = [0,0,0,0,0]
@@ -26,10 +28,12 @@ function Moviedetails(){
     }
     useEffect(()=>{
         setStarArr(() => getStarsbasedOnVote())
-    }, [])
+        setMovieOverview(movieContextData.overvView)
+        setMovieTitle(movieContextData.title)
+    }, [movieContextData])
     return(
     <div className="movie-details-container">
-        <h1>{movieContextData.title}</h1>
+        <h1>{movieTitle}</h1>
         <div className="stars">
             {
                 starArr.map((elm, index) => {
@@ -44,7 +48,7 @@ function Moviedetails(){
             }
         </div>
         <p className="types"><span>Type 1</span> | <span>Type 2</span></p>
-        <p className="overview">{movieContextData.overvView}</p>
+        <p className="overview">{movieOverview}</p>
         <div className="fav-trailer">
             <BsBookmarkPlusFill className="addToFavorite"/>
             <IoMdPlay className="watchTrailer"/>

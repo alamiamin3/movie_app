@@ -4,14 +4,20 @@ import HomeSection from './components/HomeSection';
 import { MovieContext } from './utils/MovieContext';
 import { useEffect, useState } from 'react';
 import apiConfig from './api/apiConfig';
-
+import MoviesCategories from "./components/MoviesCategories";
 import 'swiper/css';
+import { Route, Routes } from 'react-router-dom';
+import Home from './pages/Home';
+import Movies from './pages/Movies';
+import MoviePage from './components/MoviePage';
+
+
 function App() {
   const [movieList, setMovieList] = useState([])
   const [MovieContextData, setMovieContextData] = useState({})
   const [loading, setLoading] = useState("true")
   const getMovie = async () =>{
-      await fetch(`${apiConfig.baseUrl}discover/movie?api_key=${apiConfig.apiKey}`)
+      await fetch(`${apiConfig.baseUrl}movie/popular?language=en-US&page=1&api_key=${apiConfig.apiKey}`)
       .then(response => response.json())
       .then(response => {
         setLoading(false)
@@ -37,8 +43,13 @@ function App() {
   
   return (
     <MovieContext.Provider value={{...MovieContextData, setMovieContextData}}>
-      
-      <HomeSection/>
+      {/* <Routes>
+        <Route path='/' element={<Home/>}></Route>
+        <Route path='/movies' element={<Movies/>}></Route>
+      </Routes> */}
+      <MoviePage/>
+      {/* <HomeSection/> */}
+      {/* <MoviesCategories/> */}
      </MovieContext.Provider>
   );
 }

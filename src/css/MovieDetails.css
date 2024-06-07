@@ -13,7 +13,7 @@
     border-radius: 7px;
     color: var(--fontMaincolor);
     padding: 50px;
-    font-size: 1vw;
+    font-size: 1.5rem;
     -webkit-animation: scale-up-center 0.7s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
     animation: scale-up-center 0.7s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
 }
@@ -82,19 +82,25 @@
     background-color: #fff;
   }
 
-  @media screen and (max-width: 865px){
+  @media screen and (max-width: 1500px){
     .movie-details-container{
       width: 80%;
-      font-size: 1em;
     }
-    .movie-details-container .types ,.movie-details-container .overview {
+    /* .movie-details-container .types ,.movie-details-container .overview {
         display: none;
-    }
+    } */
   }
   
   @media screen and (max-height: 865px){
     .movie-details-container .types ,.movie-details-container .overview {
-        font-size: 15px;
+        font-size: 18px;
+    }
+    
+  }
+  @media screen and (max-width: 865px){
+    .movie-details-container{
+      width: 80%;
+      font-size: 2.3vw;
     }
     
   }

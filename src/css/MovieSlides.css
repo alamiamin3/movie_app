@@ -1,26 +1,39 @@
-.movie-slide-container{
+/* .movie-slide-container{
     
-    /* margin-top: 70.8vh; */
-}
+    margin-top: 70.8vh;
+} */
 .movie-card{
-    height: 300px;
+    height: 310px;
     width: 200px;
     text-align: center;
-    transition: all 0.3s;
-    cursor: pointer;
-}
-.movie-card:hover{
-    transform: scale(1.1);
+    background-color: #fff;
+    border-radius: 7px;
 }
 .movie-card > img{
+    margin-top: 15px;
     border: 1px solid #fff;
     border-radius: 7px;
     height: 80%;
     width: 100%;
 }
+.movie-card > .movieCard-button{
+    padding: 5px 10px;
+    background-color: rgb(230, 35, 21);
+    border: 0;
+    border-radius: 7px;
+    color: #fff;
+    font-size: 15px;
+    transition: all 0.3s;
+    cursor: pointer;
+}
+.movie-card > .movieCard-button:hover{
+    background-color: #fff;
+    color: rgb(230, 35, 21);
+    transform: scale(1.1);
+}
+
 .mySwiper{
     background-color: rgba(28, 29, 29, 0.5);
     position: absolute;
-    top: 70.8vh;
-
+    bottom: -72.7vh;
 }

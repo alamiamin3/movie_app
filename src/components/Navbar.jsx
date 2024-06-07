@@ -2,12 +2,12 @@ import React, { useState } from "react";
 import { BiSearch } from "react-icons/bi";
 import { FaBars } from "react-icons/fa6";
 import { IoCloseSharp } from "react-icons/io5";
+import { Link } from "react-router-dom";
 // import Searchbar from "./Searchbar";
 
-function Navbar(){
+function Navbar(props){
     const [searchState, setSearchState] = useState(false)
     const [barState, setBarState] = useState(false)
-
     return(
         <div className="nav-bar-container">
             <nav className="nav-bar">
@@ -15,8 +15,8 @@ function Navbar(){
                     <span><b>LEET</b>FLIX</span>
                 </div>
                 <ul id="nav-list" className={barState ? "nav-list" : "nav-list active"}>
-                    <li id="active" className="Home">Home</li>
-                    <li className="movies">Movies</li>
+                    <li className="Home"><Link id={props.active === "home" && "active"} to="/">Home</Link></li>
+                    <li className="movies"><Link id={props.active ==="movies" && "active"} to="/movies">Movies</Link></li>
                     <li className="tv">TV Shows</li>
                     <li className="Trend">Trend</li>
                 </ul>
