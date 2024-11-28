@@ -1,0 +1,15 @@
+version: '3.4'
+services:
+  movie_app_frontend:
+    build: ./frontend
+    container_name: movie_app_frontend
+    restart: always
+    volumes:
+      - ./frontend:/app
+    ports:
+      - 5173:5173
+    networks:
+      - movie_app_network
+networks:
+  movie_app_network:
+    name: movie_app_network
