@@ -1,15 +1,21 @@
-version: '3.4'
+version: '3.8'
+
 services:
-  movie_app_frontend:
-    build: ./frontend
-    container_name: movie_app_frontend
-    restart: always
-    volumes:
-      - ./frontend:/app
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
     ports:
-      - 5173:5173
+      - "5173:5173"  # Expose port 3000 on the host machine
+    volumes:
+      - ./frontend:/app  # Mount the current directory to the container for live reloading
+      - /app/node_modules  # Avoid overwriting node_modules with the host
+    environment:
+      - CHOKIDAR_USEPOLLING=true 
     networks:
-      - movie_app_network
+      - app-network
+
+
 networks:
-  movie_app_network:
-    name: movie_app_network
+  app-network:
+    driver: bridge
