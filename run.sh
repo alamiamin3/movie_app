@@ -1,2 +1,2 @@
-npm i --prefix ./frontend
-docker compose up --build
+npm i --prefix ./frontend #install dependecies
+docker compose up --build #run the project
