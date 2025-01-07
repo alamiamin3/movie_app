@@ -9,7 +9,7 @@ export default function NavBar() {
         "Search"
     ]
   return (
-        <div className='navbar-container text-white font-poppins flex justify-between items-center max-w-screen-lg mx-auto'>
+        <div className='relative navbar-container text-white font-poppins flex justify-between items-center  z-30'>
             <div className='text-primary text-2xl font-semibold'>
                 LOGO
             </div>
