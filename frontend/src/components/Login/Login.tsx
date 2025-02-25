@@ -6,12 +6,12 @@ import { MdOutlineBookmarkAdd } from "react-icons/md";
 const Login = ()=>{
     return(
         <div className="min-h-[100vh] bg-black font-poppins  relative w-full  ">
-            <div className="head-section relative z-20 text-black py-4 bg-[url(banner_movie.png)] bg-cover bg-center bg-no-repeat h-[100vh] ">
+            <div className="head-section relative z-20 text-black py-4 bg-[url(banner_movie.png)] bg-cover bg-center bg-no-repeat min-h-[800px] ">
                 <div className="absolute inset-0 bg-gradient-to-r from-black via-white/0 to-white/0 z-10"></div>
                 <div className="absolute inset-0 bg-black/60 z-20"></div>
-                <div className="max-w-screen-lg mx-auto h-full">
+                <div className="max-w-screen-lg mx-auto h-full ">
                     <NavBar />
-                    <div className="relative   z-30  flex items-end h-[70%] ">
+                    <div className="relative   z-30  flex items-center min-h-[700px]">
                         <div className="movie-detail-container flex flex-col text-white max-w-[60%] gap-2">
                             <p className="font-extralight text-sm">2019</p>
                             <p className="font-semibold text-xl">Avengers: Endgame</p>

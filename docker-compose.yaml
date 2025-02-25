@@ -1,5 +1,3 @@
-version: '3.8'
-
 services:
   frontend:
     build:
@@ -9,7 +7,6 @@ services:
       - "5173:5173"  # Expose port 3000 on the host machine
     volumes:
       - ./frontend:/app  # Mount the current directory to the container for live reloading
-      - /app/node_modules  # Avoid overwriting node_modules with the host
     environment:
       - CHOKIDAR_USEPOLLING=true 
     networks:

@@ -1,15 +1,12 @@
 
-FROM node:18 AS build
+FROM node:22 AS build
 
 WORKDIR /app
 
 
-COPY package.json package-lock.json ./
-RUN npm install
-
 COPY . .
 
-EXPOSE 5173
+RUN chmod +x /app/script.sh
 
 
-CMD ["npm", "run", "dev"]
+CMD ["bash", "-c", "./script.sh"]
