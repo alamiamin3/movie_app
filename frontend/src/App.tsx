@@ -1,11 +1,13 @@
 
 import Login from "./components/Login/Login"
-import SimpleSlider from "./components/Home/Home"
+import AppContextProvider from "./components/Contexts/AppContext"
 function App() {
 
 
   return (
-    <SimpleSlider/>
+    <AppContextProvider>
+      <Login/>
+    </AppContextProvider>
   )
 }
 
