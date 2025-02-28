@@ -1,3 +1,3 @@
-npm i --prefix ./frontend #install dependecies
+npm i --prefix ./frontend 
 
-docker compose up --build #run the project
+docker compose up --build
